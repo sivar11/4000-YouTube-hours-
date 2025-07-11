@@ -20,6 +20,19 @@
       font-size: 22px;
     }
 
+    .open-bot-btn {
+      background-color: #0088cc;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
     .search-box {
       margin-bottom: 20px;
     }
@@ -74,7 +87,14 @@
   </style>
 </head>
 <body>
+
+  <!-- زر فتح التطبيق المصغر داخل البوت -->
+  <a class="open-bot-btn" href="https://t.me/youtube_4000h_bot?start=webapp" target="_blank">
+    🚀 تشغيل التطبيق داخل تيليجرام
+  </a>
+
   <h1>نوافذ تشغيل يوتيوب (Telegram)</h1>
+
   <div class="search-box">
     <input type="text" id="video-url" placeholder="رابط فيديو يوتيوب">
     <br>
@@ -131,7 +151,7 @@
 
     if (window.Telegram.WebApp) {
       Telegram.WebApp.ready();
-      Telegram.WebApp.expand(); // يوسع الواجهة لتملأ الشاشة
+      Telegram.WebApp.expand();
     }
   </script>
 </body>
