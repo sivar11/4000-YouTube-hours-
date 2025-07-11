@@ -5,6 +5,7 @@
   <title>نوافذ يوتيوب</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" crossorigin="anonymous"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -20,17 +21,15 @@
       font-size: 22px;
     }
 
-    .open-bot-btn {
-      background-color: #0088cc;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      margin-bottom: 20px;
-      font-size: 16px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
+    .ad-box {
+      margin: 10px auto 20px;
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+      height: 100px;
+      overflow: hidden;
+      border-radius: 10px;
+      background-color: #fff;
     }
 
     .search-box {
@@ -74,7 +73,7 @@
       overflow: hidden;
     }
 
-    iframe {
+    iframe.video {
       width: 100%;
       height: 100%;
     }
@@ -87,17 +86,32 @@
   </style>
 </head>
 <body>
- 
+
   <h1>نوافذ تشغيل يوتيوب (Telegram)</h1>
 
+  <!-- ✅ إعلان AdMob مباشرة -->
+  <div class="ad-box">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-9157592815438447"
+         data-ad-slot="5231700204"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+  <!-- ✅ حقل إدخال الرابط -->
   <div class="search-box">
     <input type="text" id="video-url" placeholder="رابط فيديو يوتيوب">
     <br>
     <button onclick="updateVideos()">تشغيل الفيديو</button>
   </div>
 
+  <!-- ✅ نوافذ الفيديو -->
   <div class="container" id="video-container">
-    <!-- نوافذ الفيديو -->
+    <!-- سيتم تعبئتها ديناميكياً -->
   </div>
 
   <script>
@@ -110,6 +124,7 @@
       div.className = 'video-frame';
 
       const iframe = document.createElement('iframe');
+      iframe.className = 'video';
       iframe.frameBorder = "0";
       iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
       iframe.allowFullscreen = true;
